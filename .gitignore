@@ -64,6 +64,8 @@ cython/.libs
 cython/plist.c
 test-driver
 
+*.control
+
 # Generated test output files
 test/data/*.test.bin
 test/data/*.test.signed.bin

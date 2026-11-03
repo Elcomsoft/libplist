@@ -328,6 +328,12 @@ fi
 
 m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
 
+AC_SUBST([DEB_VERSION], [${PACKAGE_VERSION}])
+
+if test "x${host_cpu}" == "xx86_64"; then
+  AC_SUBST([DEB_ARCH], [amd64])
+fi
+
 AC_CONFIG_FILES([
 Makefile
 libcnary/Makefile
@@ -341,6 +347,11 @@ cython/Makefile
 test/Makefile
 fuzz/Makefile
 doxygen.cfg
+debian/libplist++-dev.control
+debian/libplist++4v5.control
+debian/libplist-dev.control
+debian/libplist4.control
+debian/libplist-utils.control
 ])
 AC_OUTPUT
 
